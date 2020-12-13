@@ -1,0 +1,127 @@
+---
+title: 어벤져스
+author:
+- 토르 (UNIST)
+- 아이언맨 (Hanyang University)
+documentclass: article
+output:
+  pdf_document:
+    keep_tex: yes
+  html_document:
+    df_print: paged
+  github_document:
+  html: null
+nocite: |
+  <!-- @bae2014invariance -->
+fontsize: 12pt
+header-includes:
+    - \usepackage{setspace}\doublespacing
+    - \usepackage{fullpage}
+    - \usepackage[utf8]{inputenc}
+    - \usepackage{kotex}
+    - \usepackage{kotex-logo}
+params:
+  format: "latex"
+bibliography: references.bib
+abstract: |
+  이 논문은 ...
+---
+
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 18px;
+      font-family: "Times New Roman", Times, serif;
+  }
+td {  /* Table  */
+  font-size: 20px;
+}
+h1.title {
+  font-size: 24px;
+  color: DarkBlue;
+}
+h1 { /* Header 1 */
+  font-size: 22px;
+  color: DarkBlue;
+}
+h2 { /* Header 2 */
+    font-size: 22px;
+  color: DarkBlue;
+}
+h3 { /* Header 3 */
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+}
+code.r{ /* Code block */
+    font-size: 20px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 20px;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stargazer)
+library(dplyr)
+library(tibble)
+library("knitr")
+```
+
+
+\setlength{\parindent}{1cm}
+
+# 서론
+
+@bae2014invariance 은 분석....
+
+# 문헌 연구
+
+과거 연구에 ...
+
+# 데이터 및 연구 방법론
+
+데이터는 코스콤, 선형 회귀분석을 사용..
+
+## 데이터
+
+서브 섹션
+
+## 연구 방법론
+
+서브 섹션
+
+\begin{center}
+<Insert Table 1>
+\end{center}
+
+# 실증 분석 결과 
+
+연구 결과에 따르면 ...
+
+$$ r_{t \rightarrow t+k}= \beta_0 + \beta_1 \cdot x_t +\varepsilon_{t \rightarrow k} $$
+
+# 결론
+
+본 논문에서 발견한 ...
+
+\newpage
+
+# Tables and Figures
+
+한글 논문이라도 Table과 Figure는 영어로 작성하세요.
+
+```{r, results='asis',echo=FALSE, message=FALSE, warning=FALSE, comment=FALSE}
+stargazer(attitude,type=params$format,header=FALSE)
+```
+
+\newpage
+
+```{r, fig.cap="A caption",echo=FALSE, message=FALSE, warning=FALSE, comment=FALSE}
+plot(attitude$rating,attitude$complaints)
+```
+
+\newpage
+
+# References

@@ -1,0 +1,120 @@
+---
+title: The Avengers
+author:
+- Thor (UNIST)
+- Iron Man (Hanyang University)
+documentclass: article
+output:
+  pdf_document:
+    keep_tex: yes
+  html_document:
+    df_print: paged
+  github_document:
+  html: null
+nocite: |
+  <!-- bae2014invariance -->
+fontsize: 12pt
+params:
+  format: "latex"
+bibliography: references.bib
+abstract: |
+  This paper examines ...
+---
+
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 18px;
+      font-family: "Times New Roman", Times, serif;
+  }
+td {  /* Table  */
+  font-size: 20px;
+}
+h1.title {
+  font-size: 24px;
+  color: DarkBlue;
+}
+h1 { /* Header 1 */
+  font-size: 22px;
+  color: DarkBlue;
+}
+h2 { /* Header 2 */
+    font-size: 22px;
+  color: DarkBlue;
+}
+h3 { /* Header 3 */
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+}
+code.r{ /* Code block */
+    font-size: 20px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 20px;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stargazer)
+library(dplyr)
+library(tibble)
+library("knitr")
+```
+
+
+\setlength{\parindent}{1cm}
+
+# Introduction
+
+@bae2014invariance investigate ... 123
+
+# Literature Review
+
+We review the literature ... 
+
+# Data and Methods
+
+The methods of event study separate ...
+
+## Data
+
+Subsection
+
+## Methods
+
+Subsection
+
+\begin{center}
+<Insert Table 1>
+\end{center}
+
+# Results 
+
+We examine the relationship between ...
+
+$$ r_{t \rightarrow t+k}= \beta_0 + \beta_1 \cdot x_t +\varepsilon_{t \rightarrow k} $$
+
+# Conclusion
+
+We identify the relations between ...
+
+\newpage
+
+# Tables and Figures
+
+
+```{r, results='asis',echo=FALSE, message=FALSE, warning=FALSE, comment=FALSE}
+stargazer(attitude,type=params$format,header=FALSE)
+```
+
+\newpage
+
+```{r, fig.cap="A caption",echo=FALSE, message=FALSE, warning=FALSE, comment=FALSE}
+plot(attitude$rating,attitude$complaints,main="test")
+```
+
+\newpage
+
+# References
